@@ -95,10 +95,12 @@ const listing= <%- JSON.stringify(listing) %>;
                    
      
                    </div>
-                  
-                     <form action="/listings/<%= listing._id %>/reviews/<%= currReview._id %>?_method=DELETE" class="mb-3 mt-2"  method="POST">
-                       <button class="btn btn-sm btn-dark">Delete</button>
-                     </form>
+                     <% if (currUser) { %>
+                      <form action="/listings/<%= listing._id %>/reviews/<%= currReview._id %>?_method=DELETE" class="mb-3 mt-2"  method="POST">
+                        <button class="btn btn-sm btn-dark">Delete</button>
+                      </form>
+                     <% } %>
+                     
                    
                     
                </div>
