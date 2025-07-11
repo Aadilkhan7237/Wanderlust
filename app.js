@@ -47,7 +47,7 @@ async function main() {
 const mongoSessionOptions=MongoStore.create({
   mongoUrl: atlasDb_Url,
   crypto: {
-    secret: 'mysecretcode'
+    secret: process.env.SECRET
   },
   touchAfter: 24*3600,
 });
@@ -58,7 +58,7 @@ mongoSessionOptions.on("Error has been occured in mongo",()=>{
 
 const sessionOptions={
   store:mongoSessionOptions,
-  secret:"mysecretcode",
+  secret:process.env.SECRET,
   resave:false,
   saveUninitialized:true,
   cookie:{
