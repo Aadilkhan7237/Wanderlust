@@ -183,6 +183,35 @@ body{
  }
 
 
+ /* NavBar styling */
+ .search-btn{ 
+    background-color: #fe424d;
+    color: #fff;
+    padding: 0 1rem 0 1rem;
+    border-radius: 25px;
+}
+
+.search-btn:hover{ 
+    background-color: #fe424d;
+    color: #fff;
+}
+
+.search-btn i {
+ 
+  
+   margin-right: 0.5rem;
+}
+.search-inp{
+border-radius: 25px;
+padding: 0.5rem 3rem 0.5rem 3rem;
+}
+
+.navbar-nav{
+padding: 0 1rem 0 1rem;
+
+}
+
+
 
 
 
@@ -238,7 +267,10 @@ body{
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
      }
 
-
+     .search-inp{
+        border-radius: 25px;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        }
 
      
       

@@ -2,6 +2,8 @@ const express=require("express");
 const router=express.Router();
 const Listing=require("../models/listing");
 
+
+
 router.get("/trending",async(req,res)=>{
     
      let allListings=await Listing.find({category:"Trending"});
@@ -76,6 +78,18 @@ router.get("/dome",async(req,res)=>{
 
     
 });
+
+
+router.post("/search",async(req,res)=>{
+   let {search:result}=req.body;
+  let allListings=await Listing.find({location:`${result}`});
+  res.render("listings/index.ejs",{allListings});
+  // console.log(result);
+  // res.redirect("/listings");
+
+    
+});
+
 
 
 
