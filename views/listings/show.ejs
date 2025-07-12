@@ -5,11 +5,11 @@ const listing= <%- JSON.stringify(listing) %>;
  </script>
 <body>
     <div class="row">
-        <div class="col-8 offset-2 mt-3">
-        <h4><%= listing.title %></h4>
+        <div class="col-lg-8 offset-lg-2 col-10 offset-1 mt-3">
+        <h4  ><%= listing.title %></h4>
     </div>
-          <div class="col-6 offset-2">
-        <div class="card listing-card" >
+          <div class="col-lg-8 offset-lg-2 col-10 offset-1">
+        <div class="card show-card" >
             <img src="<%= listing.image.url %>" class="card-img-top show-img"  alt="listing_Image">
             <div class="card-body">
               <p class="card-text">Owned by <i><%= listing.owner.username %></i></p>
@@ -27,18 +27,18 @@ const listing= <%- JSON.stringify(listing) %>;
        
         <br>
         <% if (currUser && currUser._id.equals(listing.owner._id)) { %>
-          <div class="btns mb-3">
-            <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-2  offset-2 edit-btn">Edit</a> 
+          <div class="col-lg-8 offset-lg-2 col-10 offset-1 btns mt-2 mb-3">
+            <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark edit-btn">Edit</a> 
 
            
             <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
-             <button class="btn btn-dark offset-5  dlt-btn">Delete</button>
+             <button class="btn btn-dark   dlt-btn">Delete</button>
             </form>
         </div>
         <% } %>
         
     
-      <div class="col-8 offset-2 mb-3">
+      <div class="col-lg-8 offset-lg-2 col-10 offset-1 mb-3">
        
         <% if (currUser) { %>
           <hr>
@@ -86,18 +86,18 @@ const listing= <%- JSON.stringify(listing) %>;
               <p><b>All Reviews</b></p>
               <div class="row">
                 <% for(let currReview of listing.reviews) { %>
-                 <div class="card col-5 mb-3 ms-3">
-                   <div class="card-body">
+                 <div class="card col-lg-5 col-10 mb-3 ms-3 reviews-card">
+                   <div class="card-body reviews-card-body">
                     
-                    <h5 class="card-title">@<%= currReview.author.username %></h5>
-                    <p class="starability-result card-text" data-rating=<%= currReview.rating %> ></p>
+                    <p class="card-title">@<%= currReview.author.username %></p>
+                    <p class="starability-result card-text stars" data-rating=<%= currReview.rating %> ></p>
                     <p class="card-text"><%=currReview.comment  %></p>
                    
      
                    </div>
-                   <% if (currUser && currUser._id.equals(currReview.author._id)) { %>
+                     <% if (currUser && currUser._id.equals(currReview.author._id)) { %>
                       <form action="/listings/<%= listing._id %>/reviews/<%= currReview._id %>?_method=DELETE" class="mb-3 mt-2"  method="POST">
-                        <button class="btn btn-sm btn-dark">Delete</button>
+                        <button class="btn btn-sm btn-outline-dark">Delete</button>
                       </form>
                      <% } %>
                      
@@ -114,7 +114,7 @@ const listing= <%- JSON.stringify(listing) %>;
           
       </div>
  
-      <div class="col-6 offset-2 mb-3">
+      <div class="col-lg-8 offset-lg-2 col-10 offset-1 mb-3">
         <h3>Where you'll be</h3>
         <div id="map"></div>
           

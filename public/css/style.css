@@ -24,12 +24,29 @@ body{
     color: #222222 !important ; 
     border-radius: 20px;
     padding: 0.5rem 2rem 0.5rem 2rem !important;
+    margin-right: 5px;
     
    
    
 }
 .nav-link:hover{
     color: #fff !important;
+    background-color: #fe424d !important;
+    border-radius: 20px;
+}
+.user-icon-btn {
+    border-radius: 50% !important;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px !important;
+  }
+  
+
+.user-icon-btn:hover{
     background-color: #fe424d !important;
 }
 
@@ -75,6 +92,8 @@ body{
 .listing-card{
     border: none !important;
     margin-bottom: 2rem;
+    height: 190px;
+    width: 190px;
 }
 
 .card-img-top{
@@ -86,8 +105,9 @@ body{
 .card-body{
     padding: 0px !important;
 }
-.card-text p{
+.card-text {
     font-weight: 400 !important;
+    font-size: 15px !important;
 }
 .listing-link{
     text-decoration: none;
@@ -117,14 +137,21 @@ body{
 
 /* Show page */
 .show-img{
-    height: 30vh;
+    height: 50vh;
 
+}
+.show-card{
+  border: none !important;
+  padding: 5px;
 }
 .btns{
     display: flex;
    
 }
 
+.dlt-btn{
+    margin-left: 30px;
+}
 
   
 /* .edit-btn{
@@ -135,5 +162,87 @@ body{
 /* MAP styling */
 #map { 
     height: 60vh;
-    width: 700px;
+    width: 100%;
  }
+
+ /* review card styling */
+ .reviews-card{
+   
+    border-radius: 25px !important;
+ }
+
+ .reviews-card-body{
+    padding: 10px 5px 10px 5px !important;
+ }
+
+ /* Preview Image styling */
+ .preview-image{
+    /* height: 100px; */
+    width: 250px;
+    border-radius: 20px;
+ }
+
+
+
+
+
+
+ @media (max-width: 576px) {
+    /* index style */
+    .listing-card {
+      font-size: 0.85rem;
+      height: auto;
+      width: 150px;
+    }
+  
+    .listing-card img {
+      height: 150px !important;
+      object-fit: cover;
+    }
+  
+    .listing-link {
+      padding: 0 4px;
+    }
+
+    /* show style */
+    .show-img{
+        height: 20vh;
+    
+    }
+    .show-card{
+        width: 100% !important;
+        border: none !important;
+        padding: 5px;
+      }
+
+      /* .f-info{
+        margin-bottom: 0;
+        position: sticky;
+      } */
+      
+      #map { 
+        height: 25vh;
+        width: 100%;
+     }
+    
+     .preview-image{
+        
+        width: 175px;
+        border-radius: 20px;
+     }
+
+     .navbar-collapse {
+        background-color: #ffffff !important;
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     }
+
+
+
+     
+      
+    
+
+  }
+  

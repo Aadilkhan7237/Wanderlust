@@ -69,7 +69,7 @@
   height: 3.25rem;
   border-radius: 1rem;
   padding: 1rem;
-  margin-left: 6.5rem;
+ 
 }
 
 
@@ -81,7 +81,17 @@
 <body>
     <!-- <h3> All Listings</h3> -->
     <!-- <a href="/listings/new"><button>Add new listing</button></a> -->
-     <div id="filters" >
+
+       <!-- Mobile Filter Toggle Button -->
+<!-- Container to help with right alignment -->
+<div class="d-flex justify-content-end ps-3">
+  <button class="btn btn-outline d-md-none mb-2 mt-2" id="toggleFiltersBtn">
+    Show Filters <i class="fa-solid fa-filter"></i>
+  </button>
+</div>
+
+
+     <div id="filters" class="d-none d-md-flex flex-wrap gap-3" >
       <div class="icon-container">
         <div> <i class="fa-solid fa-fire"></i></div>
         <p> Trending</p>
@@ -137,6 +147,7 @@
         <div><i class="fa-solid fa-ship"></i></div>
          <p>Boats</p>
       </div> 
+    
 
       <div class="tax-toggle">
         <div class="form-check-reverse form-switch">
@@ -144,16 +155,16 @@
           <label class="form-check-label" for="switchCheckDefault">Display total after tax</label>
         </div>
       </div>
-     
+    </div>
 
-     </div>
      
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-2">
+     
+    <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-2 g-2 mt-2">
         <% for( let listing of allListings ) { %>
             <a href="/listings/<%= listing._id %> " class="listing-link">
                 <div class="card col listing-card" >
              
-                    <img src="<%= listing.image.url%>" class="card-img-top" alt="Listing_img" style="height: 20rem;">
+                    <img src="<%= listing.image.url%>" class="card-img-top" alt="Listing_img" style="height: 190px;">
                     <div class="card-img-overlay"></div>
                     <div class="card-body">
                       <p class="card-text">
@@ -190,4 +201,23 @@
     
 
   })
+
+
+
+  const toggleBtn = document.getElementById("toggleFiltersBtn");
+  const filters = document.getElementById("filters");
+
+  toggleBtn.addEventListener("click", () => {
+    filters.classList.toggle("d-none");
+    filters.classList.toggle("d-flex");
+
+    // Optional: update button text
+    if (filters.classList.contains("d-none")) {
+      toggleBtn.innerHTML = `Show Filters <i class="fa-solid fa-filter"></i>`;
+    } else {
+      toggleBtn.innerHTML =`Hide Filters <i class="fa-solid fa-filter"></i>`;
+    }
+  });
+
+
 </script>

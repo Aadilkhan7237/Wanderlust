@@ -3,7 +3,7 @@
  
 <body>
     <div class="row">
-        <div class="col-8 offset-2 mt-3">
+        <div class="col-lg-8 offset-lg-2 col-10 offset-1 mt-3">
      <h3>Edit your listing</h3>
      <!-- <p>Id of Current Listing is : <%= currListing._id %></p>  -->
      
@@ -22,7 +22,7 @@
        
         <div class="mb-3">
             <label for="description" class="form-label">Enter description</label>
-            <textarea name="listing[description]" id="description" class="form-control" cols="30" rows="2" placeholder="" required><%= currListing.description %></textarea>
+            <textarea name="listing[description]" id="description" class="form-control" cols="30" rows="4" placeholder="" required><%= currListing.description %></textarea>
             <div class="valid-feedback">
                 Looks good!
               </div>
@@ -31,9 +31,9 @@
               </div>
         </div>
         
-        <div class="mb-3">
+        <div class="mb-3 ">
           <h5>Original Image</h5>
-          <img src="<%= originalImageUrl%>" alt="">
+          <img src="<%= originalImageUrl%>" alt="" class="preview-image">
         
       </div>
 
