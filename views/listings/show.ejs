@@ -6,7 +6,7 @@ const listing= <%- JSON.stringify(listing) %>;
 <body>
     <div class="row">
         <div class="col-lg-8 offset-lg-2 col-10 offset-1 mt-3">
-        <h4  ><%= listing.title %></h4>
+        <h4  ><%= listing.title %></h4><i>[<%= listing.category %>]</i>
     </div>
           <div class="col-lg-8 offset-lg-2 col-10 offset-1">
         <div class="card show-card" >
