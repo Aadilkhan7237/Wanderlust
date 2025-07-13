@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<style>
+    .card {
+  border-radius: 1rem;
+}
+.card img {
+  border: 3px solid #eee;
+}
+.rounded-circle{
+    border-radius: 50%;
+}
+.text-primary{
+    color: black !important;
+}
+</style>
+
+<div class="row">
+    <h2 class="col-lg-6 offset-lg-3  col-10 offset-1 mt-3">Profile area</h2>
+    <div class="col-lg-6 offset-lg-3 col-10 offset-1 mt-3">
+         
+        
+            <div class="card-body">
+             
+             
+          
+              <!-- Username -->
+              <br>
+              <h4 class="card-title mb-2"><strong>Username: </strong><span class="text-primary"><%= currUser.username %></span></h4>
+          
+             <br> 
+          
+              <!-- Gmail -->
+              <h4 class="mb-2"><strong>Gmail:</strong> <br> <%= currUser.email %></h4>
+          
+             
+             
+            </div>
+         
+          
+
+     </div>
+</div>

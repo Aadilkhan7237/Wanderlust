@@ -27,6 +27,7 @@ router.route("/login").get(userController.loginForm).post(saveRedirectURL,passpo
 //LogOut
 router.get("/logout",userController.logOut);
 
-
+//profile page
+router.get("/profile",userController.profile);
 
 module.exports=router;

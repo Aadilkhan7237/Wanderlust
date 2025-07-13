@@ -52,3 +52,10 @@ module.exports.logOut=(req,res,next)=>{
           return res.redirect("/listings");
     })
 }
+
+module.exports.profile=(req,res)=>{
+      const currUser=req.user;
+     
+      res.render("users/profile",{currUser});
+     
+  }
