@@ -170,10 +170,10 @@
 
      
      
-    <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-2 g-2 mt-2">
+    <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-2 g-2 mt-2"  data-aos="fade-up">
         <% for( let listing of allListings ) { %>
             <a href="/listings/<%= listing._id %> " class="listing-link">
-                <div class="card col listing-card" >
+                <div class="card col listing-card" data-aos="fade-up" >
              
                     <img src="<%= listing.image.url%>" class="card-img-top" alt="Listing_img" style="height: 190px;">
                     <div class="card-img-overlay"></div>
@@ -230,5 +230,7 @@
     }
   });
 
+
+  
 
 </script>
